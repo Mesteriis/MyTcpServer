@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,16 +16,46 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    gui/clickablelabel.cpp \
+    gui/clientitemonform.cpp \
+    gui/popup.cpp \
+    gui/stat.cpp \
+    gui/switchwithid.cpp \
     main.cpp \
-    guicore.cpp
+    gui/guicore.cpp \
+    sys/client.cpp \
+    sys/rng.cpp \
+    sys/swcore.cpp \
+    sys/worker.cpp
 
 HEADERS += \
-    guicore.hpp
+    gui/clickablelabel.hpp \
+    gui/clientitemonform.hpp \
+    gui/guicore.hpp \
+    gui/popup.hpp \
+    gui/stat.hpp \
+    gui/switchwithid.hpp \
+    sys/client.hpp \
+    sys/rng.hpp \
+    sys/swcore.hpp \
+    sys/worker.hpp
 
 FORMS += \
-    guicore.ui
+    gui/guicore.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    res/resources.qrc
+
+ICON = $${PWD}/res/server.icns
+
+VERSION = 2.0.0
+
+QMAKE_TARGET_COMPANY = "Shade Inc"
+QMAKE_TARGET_PRODUCT = MyTcpServer
+QMAKE_TARGET_DESCRIPTION = Simpli Tcp Server graf
+QMAKE_TARGET_COPYRIGHT = AVM
