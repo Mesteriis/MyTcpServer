@@ -1,2 +1,8 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/pic">
+        <file>server.icns</file>
+        <file>broadcastOnAir.gif</file>
+        <file>IMG_0098.gif</file>
+        <file>server.gif</file>
+    </qresource>
+</RCC>
